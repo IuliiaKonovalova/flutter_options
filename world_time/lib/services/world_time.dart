@@ -15,17 +15,22 @@ class WorldTime {
   });
 
   Future<void> getTimeData() async {
-    Response response = await get(Uri.parse(
-        "https://timeapi.io/api/Time/current/zone?timeZone=$urlTail"));
-    Map data = jsonDecode(response.body);
+    try {
+      Response response = await get(Uri.parse(
+          "https://timeapi.io/api/Time/current/zone?timeZone=$urlTail"));
+      Map data = jsonDecode(response.body);
 
-    String dateTime = data['dateTime'];
+      String dateTime = data['dateTime'];
 
-    DateTime now = DateTime.parse(dateTime);
+      DateTime now = DateTime.parse(dateTime);
 
-    // set the time property
-    time = now.toString();
-    print(time);
+      // set the time property
+      time = now.toString();
+      print(time);
+    } catch (e) {
+      print('caught error: $e');
+      time = 'could not get time data';
+    }
   }
 }
 
