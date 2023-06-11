@@ -18,22 +18,11 @@ class WorldTime {
     Response response = await get(Uri.parse(
         "https://timeapi.io/api/Time/current/zone?timeZone=$urlTail"));
     Map data = jsonDecode(response.body);
-    print(data);
-    print(data['dateTime']);
-    print(data['date']);
-    print(data['dayOfWeek']);
+
     String dateTime = data['dateTime'];
-    String date = data['date'];
-    String dayOfWeek = data['dayOfWeek'];
-    String timeApi = data['time'];
+
     DateTime now = DateTime.parse(dateTime);
-    print('time is $timeApi');
-    print(now);
-    print(now.year);
-    print(now.month);
-    print(now.day);
-    print(now.hour);
-    print(now.minute);
+
     // set the time property
     time = now.toString();
     print(time);
