@@ -13,21 +13,11 @@ class ChooseLocation extends StatefulWidget {
 class _ChooseLocationState extends State<ChooseLocation> {
   int counter = 0;
 
-  void getTimeData() async {
-    Response response = await get(Uri.parse(
-        "https://timeapi.io/api/Time/current/zone?timeZone=Europe/Amsterdam"));
-    Map data = jsonDecode(response.body);
-    print(data);
-    print(data['dateTime']);
-    print(data['date']);
-    print(data['dayOfWeek']);
-  }
-
   @override
   void initState() {
     super.initState();
     print('initState function ran');
-    getTimeData();
+    // getTimeData();
   }
 
   @override
