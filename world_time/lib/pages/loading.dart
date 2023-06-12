@@ -40,11 +40,9 @@ class _LoadingState extends State<Loading> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(50.0),
-        child: Text(time),
-      ),
-    );
+    return const Scaffold(
+        body: Center(
+      child: CircularProgressIndicator(),
+    ));
   }
 }
