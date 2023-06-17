@@ -66,6 +66,12 @@ class _HomeState extends State<Home> {
                     fontSize: 66.0,
                   ),
                 ),
+                Text(
+                  data['isDaytime'],
+                  style: const TextStyle(
+                    fontSize: 66.0,
+                  ),
+                ),
               ],
             ),
             const Spacer(flex: 2),
