@@ -16,6 +16,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     parameters = ModalRoute.of(context)!.settings.arguments;
+    print(parameters);
+    // data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
     Map data = jsonDecode(jsonEncode(parameters));
     return Scaffold(
       body: SafeArea(

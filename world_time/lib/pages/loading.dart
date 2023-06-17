@@ -13,29 +13,35 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
   String time = 'loading';
-  Future<void> setUpWorldTime() async {
+  void setUpWorldTime() async {
     WorldTime instance = WorldTime(
       location: 'Berlin',
       flag: 'germany.png',
       urlTail: 'Europe/Berlin',
-      time: '',
+      time: '2:30',
       isDayTime: true,
     );
     await instance.getTimeData();
+    // print everything
+    print(instance.time);
+    print(instance.flag);
+    print(instance.location);
+    print(instance.isDayTime);
+    print(instance.urlTail);
 
-    Navigator.pushReplacementNamed(context, '/home', arguments: {
-      'location': instance.location,
-      'flag': instance.flag,
-      'time': instance.time,
-      'isDayTime': instance.isDayTime,
-    });
+    // Navigator.pushReplacementNamed(context, '/home', arguments: {
+    //   'location': instance.location,
+    //   'flag': instance.flag,
+    //   'time': instance.time,
+    //   'isDayTime': instance.isDayTime,
+    // });
   }
 
   @override
   void initState() {
     super.initState();
     print('initState function ran');
-    setUpWorldTime();
+    // setUpWorldTime();
   }
 
   @override

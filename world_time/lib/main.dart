@@ -9,7 +9,7 @@ void main() => runApp(
         routes: {
           '/': (context) => const Loading(),
           '/home': (context) => const Home(),
-          '/location': (context) => const ChooseLocation(),
+          '/location': (context) => ChooseLocation(),
         },
       ),
     );
